@@ -1,38 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root {
+  --main: #53201c;
+  --alt1: #CE9800;
+  --alt2: #e51100;
+}
+
+*, body, html {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: 'Lobster', cursive;
+  background-color: #AEBDC4;
+  display: flex;
+  justify-content: center;
+  font-size: calc(10px + 1.3vmin);
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+}
+
+pre {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
+svg {
+  z-index: 0;
+}
+
+.marks .land {
+  fill: #ececec;
+}
+.marks .sphere {
+  fill: #fbfbfb;
+}
+.marks .interiors {
+  fill: none;
+  stroke: #d9dfe0;
+}
+.marks .graticules, .tick line {
+  fill: none;
+  stroke: #ececec;
+}
+
+polygon {
+  fill: var(--main);
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.hovered {
+  fill: var(--alt1);
+  opacity: 1;
+  stroke: var(--alt1);
+  stroke-width: 4;
+  z-index: 150;
+}
+
+.clicked {
+  fill: var(--alt2);
+  opacity: 1;
+  stroke: var(--alt2);
+  stroke-width: 6;
+  z-index: 200;
+}
+
+.App .modal {
+  position: absolute;
+  top: 160px;
+  left: 50px;
+  padding: 10px;
+  background-color: white;
+  z-index: 100;
+  /* border: 1px solid rgb(231, 231, 231); */
+  border: 1px solid rgba(109, 54, 54, 0.2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.App .modal p {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: 0.9rem;
+  line-height: 0.1; */
+}
+
+.App .modal .left {
+  text-align: right;
+  margin-right: 12px;
+  margin-left: 20px;
+  font-weight: 500;
+  /* width: 160px; */
+}
+
+.App .modal .right {
+  text-align: left;
+  margin-right: 20px;
+  /* width: 160px; */
+
+}
+
+.epoch {
+  text-transform: capitalize;
+}
+
+.App .modal .close {
+  background-color: var(--alt2);
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   color: white;
+  line-height: 32px;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.email {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
 }
