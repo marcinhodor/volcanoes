@@ -26,7 +26,7 @@ export const BubbleMap = ({ worldAtlas, data, openDetails, cilckedItem }) => {
             <path className="interiors" d={path(interiors)} />
           </>
         ),
-        [land, interiors, path, graticule] //path, graticule,
+        [land, interiors] //path, graticule,
       )}
       {data.map((d, i) => {
         const [x, y] = projection(d.coords);
