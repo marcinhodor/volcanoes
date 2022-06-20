@@ -1,4 +1,4 @@
-# Volcanoes of the Earth
+# Volcanoes of the World
 
 Data visualization / Web development project.
 
